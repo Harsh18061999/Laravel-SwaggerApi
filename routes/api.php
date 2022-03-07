@@ -20,10 +20,12 @@ Route::controller(AuthController::class)->group(function(){
     Route::post('register', 'register');
     Route::post('login', 'login');
 });
-Route::get('/plan',[CompetitorLocationMoitoringController::class,'index']);
 // Route::controller(CompetitorLocationMoitoringController::class)->group(function(){
 //     Route::get('/plan','index');
 // });
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    //     return $request->user();
+    // });
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/plan',[CompetitorLocationMoitoringController::class,'index']);
 });
