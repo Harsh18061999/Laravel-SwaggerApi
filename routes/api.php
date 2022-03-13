@@ -27,5 +27,5 @@ Route::controller(AuthController::class)->group(function(){
     //     return $request->user();
     // });
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/plan',[CompetitorLocationMoitoringController::class,'index']);
+    Route::post('/plan',[CompetitorLocationMoitoringController::class,'index']);
 });

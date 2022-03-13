@@ -150,13 +150,49 @@
             }
         },
         "/plan": {
-            "get": {
+            "post": {
                 "tags": [
                     "CompetitorLocationMoitoring"
                 ],
                 "summary": "Get list of CompetitorLocationMoitoring",
                 "description": "Returns list of CompetitorLocationMoitoring",
                 "operationId": "getProjectsList",
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "zipcode": {
+                                        "type": "text"
+                                    },
+                                    "source": {
+                                        "type": "text"
+                                    },
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "address": {
+                                        "type": "text"
+                                    },
+                                    "city": {
+                                        "type": "text"
+                                    },
+                                    "country": {
+                                        "type": "text"
+                                    },
+                                    "brand": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Successful operation",
